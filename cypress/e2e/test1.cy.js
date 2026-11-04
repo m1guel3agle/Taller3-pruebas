@@ -9,5 +9,6 @@ it('Debe mostrar la tarea creada', () => {
   cy.get('#taskTitle').type('Comprar pan');
   cy.contains('button', 'Crear tarea').click();
 
-  cy.contains('#taskList li', 'Comprar pan').should('exist');
+  // ERROR INTENCIONAL: se creó "Comprar pan" pero se busca "Comprar leche"
+  cy.contains('#taskList li', 'Comprar leche').should('exist');
 });
